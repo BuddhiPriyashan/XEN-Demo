@@ -429,8 +429,11 @@ REPOSITORY     TAG        IMAGE ID       CREATED         SIZE
 debian         bullseye   909f4919a453   6 days ago      124MB
 ```
 ### Run the Docker container mounting `~/benchmark_test` as a volume to the container
-> `--cpus`     specify maximum amount of  CPU resources the container can use
-> `--memory specify` maximum amount of memory the container can use
+
+ `--cpus`     specify maximum amount of  CPU resources the container can use
+ 
+ `--memory specify` maximum amount of memory the container can use
+ 
 ```shell
 #Set Maximum Memory Access and CPU Usage
 bdy@vm2:~/benchmark_test$ sudo docker run -it --name=debian_xen \
