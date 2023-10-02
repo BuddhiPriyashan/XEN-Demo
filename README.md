@@ -50,6 +50,21 @@ Multicore SoC virtualization - refers to systems-on-chip, mainly Arm and x86
 | Type 1 / Bare-Metal | Type 2 |
 | Ex.: Xen Hypervisor, ESXi | Ex.: VirtualBox |
 
+### Based on Virtualization type:
+| --- | --- |
+| Full virtualization | Paravirtualization |
+
+# Demo - Xen Hypervisor
+https://wiki.xenproject.org/wiki/Xen_Project_Software_Overview
+
+## Step1: XenServer 8 installation on a old laptop
+Doc.: https://docs.xenserver.com/en-us/xenserver/8/quick-start.html, https://wiki.xenproject.org/wiki/Xen_Project_Software_Overview, 
+https://www.xenserver.com/downloads#download
+
+![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/5c4fd7e6-0721-4f06-b3f2-b20ede07c2db)
+
+
+![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/2be1ef83-1769-4b9e-8072-df87b6dcd3ff)
 
 
 
