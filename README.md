@@ -128,7 +128,8 @@ VM successfully created:
 VM with Docker installed:
 ![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/cde606f3-2f14-4ef7-aa5d-53e9558c1503)
 
-## Step 6: Install Phoronix Test Suite as benchmarking tool https://www.phoronix-test-suite.com/?k=downloads
+## Step 6: Install Phoronix Test Suite as benchmarking tool 
+https://www.phoronix-test-suite.com/?k=downloads
 
 http://www.diva-portal.org/smash/get/diva2:1665606/FULLTEXT01.pdf
 
@@ -158,17 +159,49 @@ Selected command  line benchmark utilities to be installed in next steps:
 | --- | --- |
 | Processor | ```N-Queens``` Time to solve N-Queens problem Default problem size is 18. (18 queens on 18x18 board) |
 | Memory | ```RAMspeed SMP``` Measure memory performance by Performed for COPY and ADD operations  |
-
 | Disk | ```Dbench``` Measure disk performance by simulating file operations (create, read, write, delete) 6 and 48 parallel processes (clients) were selected |
 
+## Step 7: Create base snapshot
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/25423296/163456776-7f95b81a-f1ed-45f7-b7ab-8fa810d529fa.png">
-  <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png">
-  <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png">
-</picture>
+Using this base snapshot two VMs (VM1 and VM2) are created In following steps.
 
+VM1 - benchmark tests on VM
 
+VM2 - benchmark tests on Docker container running on top of VM
 
+![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/210afad7-a918-4d07-ac4a-bfeba52b67d0)
+
+## Step 8: VM1 - benchmark tests on VM
+
+### Create VM from base snapshot
+
+### Benchmarking 
+```shell
+bdy@xenvmdebian3-buddhika:~$ phoronix-test-suite install pts/n-queens
+
+bdy@xenvmdebian3-buddhika:~$ phoronix-test-suite run pts/n-queens-1.2.1
+...
+N-Queens 1.0:
+    pts/n-queens-1.2.1
+    Test 1 of 1
+    Estimated Trial Run Count:    3
+    Estimated Time To Completion: 36 Minutes [23:56 EEST]
+        Started Run 1 @ 23:21:05
+        Started Run 2 @ 23:26:59
+        Started Run 3 @ 23:32:52
+
+    Elapsed Time:
+        349.545
+        349.602
+        349.483
+
+    Average: 349.543 Seconds
+    Deviation: 0.02%
+    
+    N-Queens 1.0
+    Elapsed Time
+    Seconds < Lower Is Better
+    N-Queens_24Sept23 . 349.54
+```
 
 
