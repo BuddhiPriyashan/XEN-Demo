@@ -176,6 +176,9 @@ VM2 - benchmark tests on Docker container running on top of VM
 ### Create VM from base snapshot
 
 ### Benchmarking 
+
+#### N-Queens
+
 ```shell
 bdy@xenvmdebian3-buddhika:~$ phoronix-test-suite install pts/n-queens
 
@@ -203,8 +206,143 @@ N-Queens 1.0:
     Seconds < Lower Is Better
     N-Queens_24Sept23 . 349.54
 ```
+#### RAMspeed SMP
 
+```shell
+bdy@xenvmdebian3-buddhika:~$ phoronix-test-suite install pts/ramspeed-1.4.3
 
+bdy@xenvmdebian3-buddhika:~$ phoronix-test-suite run pts/ramspeed-1.4.3
+...
+RAMspeed SMP 3.5.0:
+    pts/ramspeed-1.4.3
+    Memory Test Configuration
+        1: Copy
+        2: Scale
+        3: Add
+        4: Triad
+        5: Average
+        6: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Type: 1,3
+
+        1: Integer
+        2: Floating Point
+        3: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Benchmark: 2
+        
+RAMspeed SMP 3.5.0:
+    pts/ramspeed-1.4.3 [Type: Add - Benchmark: Floating Point]
+    Test 1 of 2
+    Estimated Trial Run Count:    3
+    Estimated Test Run-Time:      6 Minutes
+    Estimated Time To Completion: 12 Minutes [00:00 EEST]
+        Started Run 1 @ 23:48:57
+        Started Run 2 @ 23:52:43
+        Started Run 3 @ 23:56:27
+
+    Type: Add - Benchmark: Floating Point:
+        8161.03
+        8157.81
+        8156.16
+
+    Average: 8158.33 MB/s
+    Deviation: 0.03%
+    
+RAMspeed SMP 3.5.0:
+    pts/ramspeed-1.4.3 [Type: Copy - Benchmark: Floating Point]
+    Test 2 of 2
+    Estimated Trial Run Count:    3
+    Estimated Time To Completion: 12 Minutes [00:11 EEST]
+        Started Run 1 @ 00:00:20
+        Started Run 2 @ 00:04:05
+        Started Run 3 @ 00:07:50
+
+    Type: Copy - Benchmark: Floating Point:
+        7418.64
+        7398.55
+        7401.9
+
+    Average: 7406.36 MB/s
+    Deviation: 0.15%
+
+    RAMspeed SMP 3.5.0
+    Type: Add - Benchmark: Floating Point
+    MB/s > Higher Is Better
+    RAMspeed-SMP Test . 8158.33 
+    
+    RAMspeed SMP 3.5.0
+    Type: Copy - Benchmark: Floating Point
+    MB/s > Higher Is Better
+    RAMspeed-SMP Test . 7406.36 
+```
+ 
+#### Dbench
+
+```shell
+bdy@xenvmdebian3-buddhika:~$ phoronix-test-suite install pts/dbench
+
+bdy@xenvmdebian3-buddhika:~$ phoronix-test-suite run pts/dbench-1.0.2
+...
+Dbench 4.0:
+    pts/dbench-1.0.2
+    Disk Test Configuration
+        1: 1
+        2: 6
+        3: 12
+        4: 48
+        5: 128
+        6: 256
+        7: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Client Count: 2,4
+
+Dbench 4.0:
+    pts/dbench-1.0.2 [Client Count: 6]
+    Test 1 of 2
+    Estimated Trial Run Count:    3
+    Estimated Test Run-Time:      45 Minutes
+    Estimated Time To Completion: 2 Hours, 15 Minutes [02:43 EEST] 
+        Started Run 1 @ 00:28:32
+        Started Run 2 @ 00:40:36
+        Started Run 3 @ 00:52:41
+
+    Client Count: 6:
+        255.977
+        257.834
+        267.091
+
+    Average: 260.301 MB/s
+    Deviation: 2.29%
+
+Dbench 4.0:
+    pts/dbench-1.0.2 [Client Count: 48]
+    Test 2 of 2
+    Estimated Trial Run Count:    3
+    Estimated Test Run-Time:      37 Minutes
+    Estimated Time To Completion: 1 Hour, 13 Minutes [02:16 EEST]
+        Started Run 1 @ 01:04:52
+        Started Run 2 @ 01:16:58
+        Started Run 3 @ 01:29:04
+
+    Client Count: 48:
+        52.143
+        52.385
+        53.8318
+
+    Average: 52.7866 MB/s
+    Deviation: 1.73%
+    
+    Dbench 4.0
+    Client Count: 6
+    MB/s > Higher Is Better
+    dbench disk benchmark test on XenVM . 260.30 
+    
+    Dbench 4.0
+    Client Count: 48
+    MB/s > Higher Is Better
+    dbench disk benchmark test on XenVM . 52.79
+```
 
 
 
