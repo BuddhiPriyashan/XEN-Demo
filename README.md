@@ -74,12 +74,12 @@ DOM0 OS version of XenServer
 ## Step3: Mounting Guest OS image to XenServer
 
 > [!NOTE]
-> Option 1 - Add a shared folder with ISO files from user laptop to XenServer - Unsuccessful
+> Option 1 - Add a shared folder with ISO files from user laptop to XenServer - ❌ Unsuccessful
 
 ![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/2d4c41a4-2bf1-43b0-8142-9ad8e8180f95)
 
 > [!NOTE]
-> Option 2 - Add a shared folder with ISO files from user laptop to XenServer - Successful
+> Option 2 - Add a shared folder with ISO files from user laptop to XenServer - ✅ Successful
 
 
 `scp` ISO image to XenServer
@@ -627,9 +627,9 @@ Dbench 4.0:
 
 | | vm1 | vm2 |
 | -- | -- | -- |
-| N-Queens 1.0 :- (Lower Is Better) | 349.54 Seconds  | 445.80 Seconds |
-| RAMspeed SMP 3.5.0 <br> (Higher Is Better) | Add: 8158.33 MB/s          Copy: 7406.36 MB/s | Add: 5652.15 MB/s          Copy: 5355.08 MB/s |
-| Dbench 4.0 :- (Higher Is Better) | Client Count 6: 260.30 MB/s Client Count 48: _**52.79 MB/s**_ | Client Count 6: 169.21  MB/s Client Count 48:  108.17 MB/s|
+| N-Queens 1.0 <br> (Lower Is Better) | 349.54 Seconds  | 445.80 Seconds |
+| RAMspeed SMP 3.5.0 <br> (Higher Is Better) | Add: 8158.33 MB/s <br> Copy: 7406.36 MB/s | Add: 5652.15 MB/s <br> Copy: 5355.08 MB/s |
+| Dbench 4.0 <br> (Higher Is Better) | Client Count 6: 260.30 MB/s <br> Client Count 48: _**52.79 MB/s**_ | Client Count 6: 169.21  MB/s <br> Client Count 48:  108.17 MB/s|
 
-❌
+
 
