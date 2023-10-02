@@ -55,19 +55,22 @@ Multicore SoC virtualization - refers to systems-on-chip, mainly Arm and x86
 | Full virtualization | Paravirtualization |
 
 # Demo - Xen Hypervisor
+
 https://wiki.xenproject.org/wiki/Xen_Project_Software_Overview
 
 ## Step1: XenServer 8 installation on a old laptop
-Doc.: https://docs.xenserver.com/en-us/xenserver/8/quick-start.html, https://wiki.xenproject.org/wiki/Xen_Project_Software_Overview, 
-https://www.xenserver.com/downloads#download
+Doc.: https://docs.xenserver.com/en-us/xenserver/8/quick-start.html <br> https://wiki.xenproject.org/wiki/Xen_Project_Software_Overview <br> https://www.xenserver.com/downloads#download
 
 ![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/5c4fd7e6-0721-4f06-b3f2-b20ede07c2db)
+
 XenServer User Interface
 
 ![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/2be1ef83-1769-4b9e-8072-df87b6dcd3ff)
 DOM0 OS version of XenServer
 
 ## Step2: XenCenter 2023.3.1 installation on user laptop and add server
+
+XenCenter Graphical User Interface:
 
 ![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/8807a529-f4b9-442c-9bae-ff7a001da475)
 
@@ -93,7 +96,7 @@ ubuntu-20.04.6-live-server-amd64.iso                               100% 1418MB  
 ```shell
 bdy@bdy:~$ ssh root@192.168.1.183
 
-[root@xenserver-buddhikaKandamulla ~]# ls -al /media/cdrom/
+[root@xenserver-buddhikaKandamulla ~]# ls -al /media/cdrom/ 
 -rwxr-xr-x 1 root root 1487339520 Sep 20 17:50 ubuntu-20.04.6-live-server-amd64.iso
 ```
 Add ```/media/cdrom``` as a ISO-type Image Storage Repository in XenServer:
