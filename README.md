@@ -79,7 +79,7 @@ DOM0 OS version of XenServer
 ![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/2d4c41a4-2bf1-43b0-8142-9ad8e8180f95)
 
 > [!NOTE]
-> Option 1 - Add a shared folder with ISO files from user laptop to XenServer - Successful
+> Option 2 - Add a shared folder with ISO files from user laptop to XenServer - Successful
 
 
 `scp` ISO image to XenServer
@@ -96,8 +96,25 @@ bdy@bdy:~$ ssh root@192.168.1.183
 [root@xenserver-buddhikaKandamulla ~]# ls -al /media/cdrom/
 -rwxr-xr-x 1 root root 1487339520 Sep 20 17:50 ubuntu-20.04.6-live-server-amd64.iso
 ```
+Add ```/media/cdrom``` as a ISO-type Image Storage Repository in XenServer:
+```shell
+[root@xenserver-buddhikaKandamulla cdrom]# xe sr-create name-label="iso" type=iso device-config:location=/media/cdrom device-config
+4521de1b-eb47-c9ca-df43-81da049ee49e
+```
 
+List Storage Repositories in the XenServer:
 
-
+```shell
+[root@xenserver-buddhikaKandamulla cdrom]# xe sr-list
+...
+uuid ( RO)                : 4521de1b-eb47-c9ca-df43-81da049ee49e
+          name-label ( RW): iso
+    name-description ( RW):
+                host ( RO): xenserver-buddhikaKandamulla
+                type ( RO): iso
+        content-type ( RO): iso
+```
+ISO Image Storage Repository XenCenter:
+![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/1a253ff4-6c18-4581-9904-d627fc5af230)
 
 
