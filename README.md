@@ -628,7 +628,7 @@ Dbench 4.0:
 | | vm1 | vm2 |
 | -- | -- | -- |
 | N-Queens 1.0 (Lower Is Better) | 349.54 Seconds  | 445.80 Seconds |
-| RAMspeed SMP 3.5.0 (Higher Is Better) | Add: 8158.33 MB/s Copy: 7406.36 MB/s | Add: 5652.15 MB/s Copy: 5355.08 MB/s |
-| Dbench 4.0 (Higher Is Better) | Client Count 6: 260.30 MB/s Client Count 48: **52.79 MB/s** | Client Count 6: 169.21  MB/s Client Count 48:  108.17 MB/s|
+| RAMspeed SMP 3.5.0          (Higher Is Better) | Add: 8158.33 MB/s          Copy: 7406.36 MB/s | Add: 5652.15 MB/s          Copy: 5355.08 MB/s |
+| Dbench 4.0 (Higher Is Better) | Client Count 6: 260.30 MB/s Client Count 48: _**52.79 MB/s**_ | Client Count 6: 169.21  MB/s Client Count 48:  108.17 MB/s|
 
 
