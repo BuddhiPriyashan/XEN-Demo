@@ -51,9 +51,8 @@ Multicore SoC virtualization - refers to systems-on-chip, mainly Arm and x86
 | Ex.: Xen Hypervisor, ESXi | Ex.: VirtualBox |
 
 ### Based on Virtualization type:
-| | |
-| --- | --- |
 | Full virtualization | Paravirtualization |
+| --- | --- |
 
 # Demo - Xen Hypervisor
 
