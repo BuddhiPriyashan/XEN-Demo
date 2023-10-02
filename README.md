@@ -415,18 +415,41 @@ Filesystem      Size  Used Avail Use% Mounted on
 /dev/xvda1       17G  6.0G  9.7G  38% /
 ```
 
-
-
-
-
-
-| ![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/b02a9912-dfc2-4a08-9b9b-71123babe85a) | ![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/342f5736-33ed-4608-81d5-b9fa3ba46810) |
-| --- | --- |
-| VM1 - benchmark tests on VM | VM2 - benchmark tests on Docker container running on top of VM |
-
 | VM1 - benchmark tests on VM | VM2 - benchmark tests on Docker container running on top of VM |
 | --- | --- |
 | ![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/b02a9912-dfc2-4a08-9b9b-71123babe85a) | ![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/342f5736-33ed-4608-81d5-b9fa3ba46810) |
 
+
+Pull docker image of same OS version
+```shell
+bdy@vm2:~$ sudo docker pull debian:bullseye
+
+bdy@vm2:~$ sudo docker images
+REPOSITORY     TAG        IMAGE ID       CREATED         SIZE 
+debian         bullseye   909f4919a453   6 days ago      124MB
+```
+Run the Docker container mounting `~/benchmark_test` as a volume to the container
+`--cpus`     specify maximum amount of  CPU resources the container can use
+`--memory specify` maximum amount of memory the container can use
+```shell
+#Set Maximum Memory Access and CPU Usage
+bdy@vm2:~/benchmark_test$ sudo docker run -it --name=debian_xen \
+>   --volume ~/benchmark_test:/v \
+>   --cpus="1.0" \
+>   --memory="1g" \  
+>   debian:bullseye
+root@5323995f8aad:/v# 
+```
+
+Installing Phoronix Test Suite in the container
+```shell
+root@5323995f8aad:/v# apt-get update
+
+root@5323995f8aad:/v# apt-get upgrade
+
+root@5323995f8aad:/v# apt --fix-broken install
+
+root@5323995f8aad:/v# dpkg -i phoronix-test-suite_10.8.4_all.deb
+```
 
 
