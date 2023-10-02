@@ -51,6 +51,7 @@ Multicore SoC virtualization - refers to systems-on-chip, mainly Arm and x86
 | Ex.: Xen Hypervisor, ESXi | Ex.: VirtualBox |
 
 ### Based on Virtualization type:
+| | |
 | --- | --- |
 | Full virtualization | Paravirtualization |
 
@@ -59,7 +60,7 @@ Multicore SoC virtualization - refers to systems-on-chip, mainly Arm and x86
 https://wiki.xenproject.org/wiki/Xen_Project_Software_Overview
 
 ## Step1: XenServer 8 installation on a old laptop
-Doc.: 
+Doc.: <br> 
 https://docs.xenserver.com/en-us/xenserver/8/quick-start.html <br> https://wiki.xenproject.org/wiki/Xen_Project_Software_Overview <br> https://www.xenserver.com/downloads#download
 
 XenServer User Interface:
