@@ -632,4 +632,26 @@ Dbench 4.0:
 | Dbench 4.0 <br> (Higher Is Better) | Client Count 6: 260.30 MB/s <br> Client Count 48: _**52.79 MB/s**_ | Client Count 6: 169.21  MB/s <br> Client Count 48:  108.17 MB/s|
 
 
+![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/33bea355-b376-40bd-8f96-572ba5dcf57d)
+
+![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/b7300d78-d087-4d69-a6a5-196d5e3356d6)
+
+![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/f2fc78d9-a9cc-4f91-86b4-e8ffb2d7efd6)
+
+
+# Summery 
+
+When layers between hardware and application increases, it adds latencies. 
+
+Dom0-less Xen for hard-real time applications
+
+# Future works
+
+OpenStack Ironic 
+
+Kubernetes on OpenStack Ironic-managed bare metal nodes [https://www.openstack.org/videos/summits/berlin-2018/running-kubernetes-on-openstack-and-bare-metal]
+![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/3b41333f-e5ea-483c-9936-11afd7ef8c0c)
+
+Provision Bare-Metal Nodes → Add DNS (for apps), FQDN (for nodes) → Distribute SSH keys → Deploy  Kubernetes cluster with Ansible Playbook
+
 
