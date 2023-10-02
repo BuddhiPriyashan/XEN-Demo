@@ -444,7 +444,7 @@ bdy@vm2:~/benchmark_test$ sudo docker run -it --name=debian_xen \
 root@5323995f8aad:/v# 
 ```
 
-Installing Phoronix Test Suite in the container
+### Installing Phoronix Test Suite in the container
 ```shell
 root@5323995f8aad:/v# apt-get update
 
@@ -454,5 +454,179 @@ root@5323995f8aad:/v# apt --fix-broken install
 
 root@5323995f8aad:/v# dpkg -i phoronix-test-suite_10.8.4_all.deb
 ```
+
+### Docker container with installed Phoronix Test Suite v10.8.4
+![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/a32780f2-c52e-40b8-8fde-6d031e8eea29)
+
+While following benchmark tests running in the container,  container’s resource utilization verified: 
+```shell
+bdy@vm2:~$ sudo docker stats
+CONTAINER ID   NAME         CPU %     MEM USAGE / LIMIT   MEM %     NET I/O         BLOCK I/O        PIDS
+5323995f8aad   debian_xen   100.73%   121.9MiB / 1GiB     11.90%    157MB / 291kB   223MB / 45.9GB   18
+```
+
+### Benchmarking 
+#### N-Queens
+```shell
+ root@5323995f8aad:/v# phoronix-test-suite run pts/n-queens-1.2.1
+N-Queens 1.0:
+    pts/n-queens-1.2.1
+    Test 1 of 1
+    Estimated Trial Run Count:    3
+    Estimated Time To Completion: 23 Minutes [14:20 UTC]
+        Started Run 1 @ 13:58:11
+        Started Run 2 @ 14:05:47
+        Started Run 3 @ 14:13:14
+
+    Elapsed Time:
+        451.522
+        443.628
+        442.262
+
+    Average: 445.804 Seconds
+    Deviation: 1.12%
+
+    N-Queens 1.0
+    Elapsed Time
+    Seconds < Lower Is Better
+    NQueen-VM2 . 445.80
+```
+
+#### RAMspeed SMP
+```shell
+root@5323995f8aad:/v# phoronix-test-suite run pts/ramspeed-1.4.3 
+
+RAMspeed SMP 3.5.0:
+    pts/ramspeed-1.4.3
+    Memory Test Configuration
+        1: Copy
+        2: Scale
+        3: Add
+        4: Triad
+        5: Average
+        6: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Type: 1,3
+
+        1: Integer
+        2: Floating Point
+        3: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Benchmark: 2
+        
+RAMspeed SMP 3.5.0:
+    pts/ramspeed-1.4.3 [Type: Add - Benchmark: Floating Point]
+    Test 1 of 2
+    Estimated Trial Run Count:    3
+    Estimated Test Run-Time:      6 Minutes
+    Estimated Time To Completion: 12 Minutes [14:45 UTC]
+        Started Run 1 @ 14:33:22
+        Started Run 2 @ 14:38:34
+        Started Run 3 @ 14:43:50
+
+    Type: Add - Benchmark: Floating Point:
+        5766.53
+        5665.42
+        5524.49
+
+    Average: 5652.15 MB/s
+    Deviation: 2.15%
+
+RAMspeed SMP 3.5.0:
+    pts/ramspeed-1.4.3 [Type: Copy - Benchmark: Floating Point]
+    Test 2 of 2
+    Estimated Trial Run Count:    3
+    Estimated Time To Completion: 16 Minutes [15:05 UTC]
+        Started Run 1 @ 14:49:21
+        Started Run 2 @ 14:54:48
+        Started Run 3 @ 15:00:13
+
+    Type: Copy - Benchmark: Floating Point:
+        5295.3
+        5427.32
+        5342.62
+
+    Average: 5355.08 MB/s
+    Deviation: 1.25%
+
+    RAMspeed SMP 3.5.0
+    Type: Add - Benchmark: Floating Point
+    MB/s > Higher Is Better
+    RAMspeed_VM2 . 5652.15 
+    
+    RAMspeed SMP 3.5.0
+    Type: Copy - Benchmark: Floating Point
+    MB/s > Higher Is Better
+    RAMspeed_VM2 . 5355.08 
+```
+
+#### Dbench
+```shell
+root@5323995f8aad:/v# phoronix-test-suite run pts/dbench-1.0.2 
+...
+Dbench 4.0:
+    pts/dbench-1.0.2
+    Disk Test Configuration
+        1: 1
+        2: 6
+        3: 12
+        4: 48
+        5: 128
+        6: 256
+        7: Test All Options
+        ** Multiple items can be selected, delimit by a comma. **
+        Client Count: 2,4
+        
+Dbench 4.0:
+    pts/dbench-1.0.2 [Client Count: 6]
+    Test 1 of 2
+    Estimated Trial Run Count:    3
+    Estimated Test Run-Time:      45 Minutes
+    Estimated Time To Completion: 1 Hour, 30 Minutes [16:46 UTC]
+        Started Run 1 @ 15:16:52
+        Started Run 2 @ 15:28:57
+        Started Run 3 @ 15:41:01
+
+    Client Count: 6:
+        170.2
+        169.197
+        168.236
+
+    Average: 169.211 MB/s
+    Deviation: 0.58%
+
+Dbench 4.0:
+    pts/dbench-1.0.2 [Client Count: 48]
+    Test 2 of 2
+    Estimated Trial Run Count:    3
+    Estimated Time To Completion: 37 Minutes [16:29 UTC]
+        Started Run 1 @ 15:53:13
+        Started Run 2 @ 16:05:19
+        Started Run 3 @ 16:17:24
+
+    Client Count: 48:
+        105.816
+        109.801
+        108.894
+
+    Average: 108.170 MB/s
+    Deviation: 1.93%
+
+    Dbench 4.0
+    Client Count: 6
+    MB/s > Higher Is Better
+    Dbench_VM2 . 169.21 
+    Dbench 4.0
+    Client Count: 48
+    MB/s > Higher Is Better
+    Dbench_VM2 . 108.17
+```
+
+
+## Step 10 - Test result comparison
+
+| | vm1 | vm2 |
+| -- | -- | -- |
+|N-Queens 1.0 (Lower Is Better) | 349.54 Seconds  | 445.80 Seconds |
 
 
