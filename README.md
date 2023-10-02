@@ -419,7 +419,7 @@ Filesystem      Size  Used Avail Use% Mounted on
 
 
 
-
+| VM1 - benchmark tests on VM | VM2 - benchmark tests on Docker container running on top of VM |
 | ![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/b02a9912-dfc2-4a08-9b9b-71123babe85a) | ![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/342f5736-33ed-4608-81d5-b9fa3ba46810) |
 | --- | --- |
 | VM1 - benchmark tests on VM | VM2 - benchmark tests on Docker container running on top of VM |
