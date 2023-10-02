@@ -59,14 +59,16 @@ Multicore SoC virtualization - refers to systems-on-chip, mainly Arm and x86
 https://wiki.xenproject.org/wiki/Xen_Project_Software_Overview
 
 ## Step1: XenServer 8 installation on a old laptop
-Doc.: https://docs.xenserver.com/en-us/xenserver/8/quick-start.html <br> https://wiki.xenproject.org/wiki/Xen_Project_Software_Overview <br> https://www.xenserver.com/downloads#download
+Doc.: 
+https://docs.xenserver.com/en-us/xenserver/8/quick-start.html <br> https://wiki.xenproject.org/wiki/Xen_Project_Software_Overview <br> https://www.xenserver.com/downloads#download
 
+XenServer User Interface:
 ![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/5c4fd7e6-0721-4f06-b3f2-b20ede07c2db)
 
-XenServer User Interface
+
+DOM0 OS version of XenServer:
 
 ![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/2be1ef83-1769-4b9e-8072-df87b6dcd3ff)
-DOM0 OS version of XenServer
 
 ## Step2: XenCenter 2023.3.1 installation on user laptop and add server
 
