@@ -62,10 +62,10 @@ Doc.: https://docs.xenserver.com/en-us/xenserver/8/quick-start.html, https://wik
 https://www.xenserver.com/downloads#download
 
 ![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/5c4fd7e6-0721-4f06-b3f2-b20ede07c2db)
-
+XenServer User Interface
 
 ![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/2be1ef83-1769-4b9e-8072-df87b6dcd3ff)
-
+DOM0 OS version of XenServer
 
 
 
