@@ -1,6 +1,3 @@
-
-
-
 #About Me
 ![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/8a48bbe4-f92a-4e45-999c-3aaf7f0be150)
 
