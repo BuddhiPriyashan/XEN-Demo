@@ -124,7 +124,10 @@ Installation Media selection step to choose ISO image during VM creation in XenC
 VM successfully created:
 ![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/0486bf0d-1d7f-4c79-862c-eab45524a051)
 
-## Step 5: Install Docker Daemon  https://hub.docker.com/r/misterbisson/simple-container-benchmarks/
+## Step 5: Install Docker Daemon  
+
+https://hub.docker.com/r/misterbisson/simple-container-benchmarks/
+
 VM with Docker installed:
 ![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/cde606f3-2f14-4ef7-aa5d-53e9558c1503)
 
