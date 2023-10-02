@@ -67,7 +67,22 @@ XenServer User Interface
 ![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/2be1ef83-1769-4b9e-8072-df87b6dcd3ff)
 DOM0 OS version of XenServer
 
+## Step2: XenCenter 2023.3.1 installation on user laptop and add server
 
+![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/8807a529-f4b9-442c-9bae-ff7a001da475)
 
+## Step3: Mounting Guest OS image to XenServer
 
+> [!NOTE]
+> Option 1 - Add a shared folder with ISO files from user laptop to XenServer - Unsuccessful
+
+![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/2d4c41a4-2bf1-43b0-8142-9ad8e8180f95)
+
+> [!NOTE]
+> Option 1 - Add a shared folder with ISO files from user laptop to XenServer - Successful
+
+`scp` ISO image to XenServer
+`bdy@bdy:/mnt/c/xen_iso$ scp ubuntu-20.04.6-live-server-amd64.iso root@192.168.1.183:/media/cdrom/
+.....
+ubuntu-20.04.6-live-server-amd64.iso                               100% 1418MB   9.6MB/s   02:28`    
 
