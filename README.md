@@ -81,12 +81,23 @@ DOM0 OS version of XenServer
 > [!NOTE]
 > Option 1 - Add a shared folder with ISO files from user laptop to XenServer - Successful
 
+
 `scp` ISO image to XenServer
 ```shell
 bdy@bdy:/mnt/c/xen_iso$ scp ubuntu-20.04.6-live-server-amd64.iso root@192.168.1.183:/media/cdrom/
 .....
 ubuntu-20.04.6-live-server-amd64.iso                               100% 1418MB   9.6MB/s   02:28    
 ```
+
+```ssh``` into the XenServer and verify
+```shell
+bdy@bdy:~$ ssh root@192.168.1.183
+
+[root@xenserver-buddhikaKandamulla ~]# ls -al /media/cdrom/
+-rwxr-xr-x 1 root root 1487339520 Sep 20 17:50 ubuntu-20.04.6-live-server-amd64.iso
+```
+
+
 
 
 
