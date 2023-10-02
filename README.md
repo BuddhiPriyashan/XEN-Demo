@@ -157,9 +157,9 @@ Selected command  line benchmark utilities to be installed in next steps:
 
 | Hardware | Benchmark Test from ```Phoronix Test Suite``` |
 | --- | --- |
-| Processor | ```N-Queens``` Time to solve N-Queens problem Default problem size is 18. (18 queens on 18x18 board) |
-| Memory | ```RAMspeed SMP``` Measure memory performance by Performed for COPY and ADD operations  |
-| Disk | ```Dbench``` Measure disk performance by simulating file operations (create, read, write, delete) 6 and 48 parallel processes (clients) were selected |
+| Processor | ```N-Queens``` <br> Time to solve N-Queens problem <br> Default problem size is 18. (18 queens on 18x18 board) |
+| Memory | ```RAMspeed SMP``` <br> Measure memory performance by simulating arithmetic operations <br> Performed for COPY and ADD operations  |
+| Disk | ```Dbench``` <br> Measure disk performance by simulating file operations (create, read, write, delete) <br> 6 and 48 parallel processes (clients) were selected |
 
 ## Step 7: Create base snapshot
 
