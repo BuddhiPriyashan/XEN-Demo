@@ -344,5 +344,83 @@ Dbench 4.0:
     dbench disk benchmark test on XenVM . 52.79
 ```
 
+## Step 9: VM2 - benchmark tests on Docker container running on top of VM
 
+Create VM2 from base snapshot with higher CPU, RAM and Disk than VM1
+
+> [!NOTE]
+> VM to run docker container has increased hardware allocation compared to previous VM. When Docker container with hardware limitations similar to previous VM
+
+### Expand the partition and filesystem
+```shell
+#Use PARTition EDitor utility to expand the partition 
+sudo parted /dev/xvda
+    resizepart
+    quit
+    
+#Resize the filesystem     
+sudo resize2fs /dev/xvda1
+```
+
+```shell
+bdy@vm2:~$ df -h
+Filesystem      Size  Used Avail Use% Mounted on    
+/dev/xvda1      8.9G  6.0G  2.5G  72% /
+
+bdy@vm2:~$ lsblk
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0   20G  0 disk
+├─xvda1 202:1    0    9G  0 part /
+├─xvda2 202:2    0    1K  0 part
+└─xvda5 202:5    0  975M  0 part [SWAP]
+    
+bdy@vm2:~$ sudo parted /dev/xvda
+GNU Parted 3.4
+Using /dev/xvda
+
+(parted) print
+
+Number  Start   End     Size    Type      File system     Flags
+ 1      1049kB  9713MB  9712MB  primary   ext4
+ 2      9714MB  10.7GB  1022MB  extended
+ 5      9714MB  10.7GB  1022MB  logical   linux-swap(v1)
+
+(parted) rm 2
+
+(parted) rm 5 
+
+(parted) resizepart 1 18GB
+
+(parted) print
+Number  Start   End     Size    Type     File system  Flags
+ 1      1049kB  18.0GB  18.0GB  primary  ext4
+
+(parted) quit
+
+bdy@vm2:~$ lsblk
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sr0      11:0    1  389M  0 rom
+xvda    202:0    0   20G  0 disk
+└─xvda1 202:1    0 16.8G  0 part /
+
+bdy@vm2:~$ sudo resize2fs /dev/xvda1
+[sudo] password for bdy: 
+resize2fs 1.46.2 (28-Feb-2021)
+Filesystem at /dev/xvda1 is mounted on /; on-line resizing required
+old_desc_blocks = 2, new_desc_blocks = 3
+The filesystem on /dev/xvda1 is now 4394275 (4k) blocks long.
+
+bdy@vm2:~$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/xvda1       17G  6.0G  9.7G  38% /
+```
+
+
+
+
+
+
+| ![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/b02a9912-dfc2-4a08-9b9b-71123babe85a) | ![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/342f5736-33ed-4608-81d5-b9fa3ba46810) |
+| --- | --- |
+| VM1 - benchmark tests on VM | VM2 - benchmark tests on Docker container running on top of VM |
 
