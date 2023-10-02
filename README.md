@@ -117,4 +117,59 @@ uuid ( RO)                : 4521de1b-eb47-c9ca-df43-81da049ee49e
 ISO Image Storage Repository XenCenter:
 ![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/1a253ff4-6c18-4581-9904-d627fc5af230)
 
+## Step 4: Create a VMs
+Installation Media selection step to choose ISO image during VM creation in XenCenter:
+![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/d96d94a9-be5b-4ccb-88b8-2ba9650097d2)
+
+VM successfully created:
+![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/0486bf0d-1d7f-4c79-862c-eab45524a051)
+
+## Step 5: Install Docker Daemon  https://hub.docker.com/r/misterbisson/simple-container-benchmarks/
+VM with Docker installed:
+![image](https://github.com/BuddhiPriyashan/XEN-Demo/assets/18088808/cde606f3-2f14-4ef7-aa5d-53e9558c1503)
+
+## Step 6: Install Phoronix Test Suite as benchmarking tool https://www.phoronix-test-suite.com/?k=downloads
+
+http://www.diva-portal.org/smash/get/diva2:1665606/FULLTEXT01.pdf
+
+Downloading Phoronix Test Suite:
+```shell
+bdy@xenvmdebian3-buddhika:~$ cd benchmark_test/
+
+# Get the installation package
+bdy@xenvmdebian3-buddhika:~/benchmark_test$ wget https://phoronix-test-suite.com/releases/repo/pts.debian/files/phoronix-test-suite_10ite_10.8.4_all.deb
+
+bdy@xenvmdebian3-buddhika:~/benchmark_test$ ls
+phoronix-test-suite_10.8.4_all.deb
+```
+
+Installing Phoronix Test Suite:
+```shell
+# Install Phoronix Test Suite
+$ sudo dpkg -i phoronix-test-suite_10.8.4_all.deb
+
+# Install missing dependencies if necessary
+$ sudo apt --fix-broken install
+```
+
+Selected command  line benchmark utilities to be installed in next steps:
+
+| Hardware | Benchmark Test from ```Phoronix Test Suite``` |
+| --- | --- |
+| Processor | ```N-Queens```
+
+Time to solve N-Queens problem 
+
+Default problem size is 18. (18 queens on 18x18 board) |
+| Memory | ```RAMspeed SMP```
+
+Measure memory performance by 
+
+Performed for COPY and ADD operations  |
+
+| Disk | ```Dbench```
+
+Measure disk performance by simulating file operations (create, read, write, delete) 
+
+6 and 48 parallel processes (clients) were selected |
 
