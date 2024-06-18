@@ -83,8 +83,10 @@ bdy@bdy:~$ ssh root@192.168.1.183
 ```
 Add ```/media/cdrom``` as a ISO-type Image Storage Repository in XenServer:
 ```shell
-[root@xenserver-buddhikaKandamulla cdrom]# xe sr-create name-label="iso" type=iso device-config:location=/media/cdrom device-config
-4521de1b-eb47-c9ca-df43-81da049ee49e
+[root@xenserver-buddhikaKandamulla cdrom]# xe sr-create name-label="iso" type=iso device-config:location=/media/cdrom device-config  #wrong
+
+[root@xenserver-bdy cdrom]# xe sr-create name-label=ISO_Storage type=iso device-config:location=/media/cdrom device-config:legacy_mode=true content-type=iso
+
 ```
 
 List Storage Repositories in the XenServer:
